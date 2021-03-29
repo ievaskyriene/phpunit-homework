@@ -1,0 +1,21 @@
+{
+    "name": "ievaskyriene/phpunit-homework",
+    "authors": [
+        {
+            "name": "ieva Skyriene",
+            "email": "ieva.skyriene@gmail.com"
+        }
+    ],
+    
+    "autoload": {
+        "psr-4": {
+            "App\\": "app",
+            "Controller\\": "app\\controllers",
+            "Repository\\": "app\\repositories",
+            "Model\\": "app\\models"
+        }
+    }, 
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
