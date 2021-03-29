@@ -46,7 +46,6 @@ class EmployeeContollerTest extends TestCase
         // $stub = $this->createStub(EmployeeRepository::class);
         // $stub->method('getAll')->willReturn(array(new Employee(1, "Jonas"), new Employee(2, "Petras")));
         // // given
-
         // $employeeController = new EmployeeController($stub);
 
         $mock = $this->getMockBuilder(EmployeeRepository::class)->getMock();
@@ -56,14 +55,11 @@ class EmployeeContollerTest extends TestCase
             ->willReturn(array(
                 new Employee(1, "Jonas"),
                 new Employee(2, "Petras"),
-                "count" => 2
-
             ));
 
-
         // when
-        $res = $employeeController->getAllJson();
-        // then ... turime pakeisti realiais duomenimis iš duomenų bazės!
-        assertEquals('{"0":{"id":1,"name":"Jonas"},"1":{"id":2,"name":"Petras"},"count":2}', $res);
+        $res = $employeeController->getAllJsonWithMetaInformation();
+        // then 
+        assertEquals('{"0":[{"id":1,"name":"Jonas"},{"id":2,"name":"Petras"}],"count":2}', $res);
     }
 }
