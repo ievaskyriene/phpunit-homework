@@ -11,20 +11,8 @@ use Model\Employee;
 class EmployeeContollerTest extends TestCase
 {
 
-    // public function test1()
-    // {
-    //     $repo = new EmployeeRepository();
-    //     print_r((new EmployeeController($repo))->getAllJson());
-    // }
-
     public function testGetAllJsonReturnsJson()
     {
-        // $stub = $this->createStub(EmployeeRepository::class);
-        // $stub->method('getAll')->willReturn(array(new Employee(1, "Jonas"), new Employee(2, "Petras")));
-        // // given
-
-        // $employeeController = new EmployeeController($stub);
-
         $mock = $this->getMockBuilder(EmployeeRepository::class)->getMock();
         $employeeController = new EmployeeController($mock);
         $mock->expects($this->exactly(1))
